@@ -29,6 +29,12 @@ $(document).keydown(function() {
   }
 });
 
+$("#start").click(function () {
+
+$(".startbtn").fadeOut(100).fadeIn(100);
+
+});
+
 // check if user clicked what game choose
 
 function checkAnswer(currentLevel) {
@@ -67,9 +73,9 @@ function checkAnswer(currentLevel) {
 
 function startOver() {
 
-level = 0;
-gamePattern = [];
-started = false;
+  level = 0;
+  gamePattern = [];
+  started = false;
 
 }
 
@@ -105,9 +111,21 @@ function nextSequence() {
   var randomChosenColor = buttonColors[randomNumber];
   gamePattern.push(randomChosenColor);
 
-  $("#" + randomChosenColor).fadeOut(100).fadeIn(100);
-  playSound(randomChosenColor);
+  // $("#" + randomChosenColor).fadeOut(100).fadeIn(100);
+
+  // playSound(randomChosenColor);
+
+  // gamePattern.forEach(element => setTimeout(function() {
+  //   animatedPress(element)}, 1500));
+
   // var audio = new Audio("sounds/" + randomChosenColor + ".mp3");
   // audio.play();
+
+  gamePattern.forEach(function(element, index) {
+    setTimeout(function() {
+      playSound(element);
+      animatedPress(element);
+    }, index * 1000);
+  });
 
 }
