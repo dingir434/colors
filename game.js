@@ -29,11 +29,19 @@ $(document).keydown(function() {
   }
 });
 
-$("#start").click(function () {
 
-$(".startbtn").fadeOut(100).fadeIn(100);
 
-});
+
+
+// $("#start").click(function () {
+//
+// $("#" + blue).fadeOut(100).fadeIn(100);
+//
+// });
+
+
+
+
 
 // check if user clicked what game choose
 
